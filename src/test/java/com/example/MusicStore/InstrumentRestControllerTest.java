@@ -24,7 +24,8 @@ public class InstrumentRestControllerTest {
     void shouldPrintWelcome() throws Exception {
         mockMvc.perform(get("/main"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().string("Welcome to the Music Store!"));
 
     }
 

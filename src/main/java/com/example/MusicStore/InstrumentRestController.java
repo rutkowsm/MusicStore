@@ -21,4 +21,14 @@ public class InstrumentRestController {
     public ResponseEntity<String> printWelcome() {
         return ResponseEntity.ok("Welcome to the Music Store!");
     }
+
+    @GetMapping("/create")
+    public ResponseEntity<Instrument> getInstrument(){
+        return ResponseEntity.ok(instrumentService.createInstrument("Guitar", "Acoustic", "Guild", "ACJE350", 4999));
+    }
+
+    @GetMapping("/find")
+    public ResponseEntity<Instrument> findInstrument(){
+        return ResponseEntity.ok(instrumentService.findById(1L));
+    }
 }

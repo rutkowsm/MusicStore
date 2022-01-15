@@ -2,6 +2,8 @@ package com.example.MusicStore;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class InstrumentService {
 
@@ -19,4 +21,15 @@ public class InstrumentService {
     public void printInstrument(Instrument instrument) {
         System.out.println(instrument);
     }
+
+    public Instrument findById (Long id) {
+        Optional<Instrument> byId = instrumentRepo.findById(id);
+        if (byId.isPresent()){
+            return byId.get();
+        }
+        else {
+            return null;
+        }
+    }
+
 }
