@@ -7,42 +7,42 @@ public class Instrument {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String type;
+    private Long instId;
+    private String instType;
     private String subType;
     private String brand;
     private String model;
     private int price;
 
-    public Instrument(String type, String subType, String brand, String model, int price) {
-        this.type = type;
+    public Instrument(String instType, String subType, String brand, String model, int price) {
+        this.instType = instType;
         this.subType = subType;
         this.brand = brand;
         this.model = model;
         this.price = price;
     }
 
-    public Instrument(String type, String subType, String brand, String model) {
-        this.type = type;
+    public Instrument(String instType, String subType, String brand, String model) {
+        this.instType = instType;
         this.subType = subType;
         this.brand = brand;
         this.model = model;
     }
 
-    public Long getId() {
-        return id;
+    public Long getInstId() {
+        return instId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setInstId(Long instId) {
+        this.instId = instId;
     }
 
-    public String getType() {
-        return type;
+    public String getInstType() {
+        return instType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setInstType(String instType) {
+        this.instType = instType;
     }
 
     public String getSubType() {

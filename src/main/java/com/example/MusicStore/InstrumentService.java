@@ -22,14 +22,9 @@ public class InstrumentService {
         System.out.println(instrument);
     }
 
-    public Instrument findById (Long id) {
-        Optional<Instrument> byId = instrumentRepo.findById(id);
-        if (byId.isPresent()){
-            return byId.get();
-        }
-        else {
-            return null;
-        }
+    public Instrument findById (Long instId) {
+        Optional<Instrument> byId = instrumentRepo.findById(instId);
+        return byId.orElse(null);
     }
 
 }
