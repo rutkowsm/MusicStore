@@ -2,6 +2,7 @@ package com.example.MusicStore;
 
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Optional;
 
 @Service
@@ -13,8 +14,8 @@ public class InstrumentService {
         this.instrumentRepo = instrumentRepo;
     }
 
-    public Instrument createInstrument(String type, String subType, String brand, String model, int price) {
-        Instrument instrument = new Instrument(type, subType, brand, model, price);
+    public Instrument createInstrument(String instType, String subType, String brand, String model, int price) {
+        Instrument instrument = new Instrument(instType, subType, brand, model, price);
         return instrumentRepo.save(instrument);
     }
 
@@ -27,4 +28,8 @@ public class InstrumentService {
         return byId.orElse(null);
     }
 
+//    public Instrument updatePrice(Instrument instrument, Long instId, int newPrice) {
+//        Optional<Instrument> oldInst = instrumentRepo.findById(instId);
+//        instrument.setPrice(instrument.getPrice(newPrice));
+//    }
 }

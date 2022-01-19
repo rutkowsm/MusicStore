@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 public class Instrument {
 
+    public Instrument() {
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long instId;
@@ -27,6 +31,10 @@ public class Instrument {
         this.subType = subType;
         this.brand = brand;
         this.model = model;
+    }
+
+    public Instrument (int price){
+        this.price = price;
     }
 
     public Long getInstId() {
@@ -69,7 +77,7 @@ public class Instrument {
         this.model = model;
     }
 
-    public int getPrice() {
+    public int getPrice(int newPrice) {
         return price;
     }
 
