@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -62,12 +61,24 @@ public class InstrumentRestController {
         return ResponseEntity.ok(instrumentService.updatePrice(instId, newPrice));
     }
 
-    @GetMapping("/all/{instType}")
-    public List<Instrument> getAllByType(@PathVariable String instType) {
-        return instrumentService.getAllByType(instType);
-    }
+    //    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
+
+//    @GetMapping("/all/{instType}")
+//    public ResponseEntity<List<Long>> getAllByType(@PathVariable String instType) {
+//        return (ResponseEntity<List<Long>>) instrumentService.getAllByType(instType);
+//    }
 
     @GetMapping("/all")
     public List<Instrument> getAllInstruments() {return instrumentService.getAllInstruments();
+    }
+
+    @GetMapping("/brands")
+    public ResponseEntity<List<String>> findAllBrands() {
+        return ResponseEntity.ok(instrumentService.findAllBrands());
+    }
+
+    @GetMapping("/delete/{instId}")
+    public String deleteById(@PathVariable Long instId) {
+        return instrumentService.deleteById(instId);
     }
 }

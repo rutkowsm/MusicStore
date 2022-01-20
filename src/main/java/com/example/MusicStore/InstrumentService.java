@@ -1,12 +1,9 @@
 package com.example.MusicStore;
 
-import net.bytebuddy.pool.TypePool;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 @Service
@@ -53,19 +50,44 @@ public class InstrumentService {
         return null;
     }
 
-    public List<Instrument> getAllByType(String instType) {
-        List<Instrument> instruments = new ArrayList<>();
-        for (Instrument instrument : instruments){
-            if (instrument.getInstType().equalsIgnoreCase(instType)) {
-                instruments.add(instrument);
-            }
-        }
-        return instruments;
-    }
+//    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
+
+//    public List<Long> getAllByType(String instType) {
+//        List<Instrument> instruments = instrumentRepo.findAll();
+//        List<Long> instByType = new ArrayList<>();
+//        for (Instrument x : instruments){
+//            if (x.getInstType().equalsIgnoreCase(instType)) {
+//                instByType.add(x.getInstId());
+//            }
+//        }
+//        return instByType;
+//    }
 
     public List<Instrument> getAllInstruments() {
         return instrumentRepo.findAll();
     }
 
+    public boolean ifInstrumentExists (Long instId) {
+        return instrumentRepo.existsById(instId);
+    }
 
+    public List<String> findAllBrands() {
+        List<Instrument> allInst = instrumentRepo.findAll();
+        List<String> brands = new ArrayList<>();
+        for (Instrument x: allInst) {
+            brands.add(x.getBrand());
+        }
+        return brands;
+    }
+
+        public String deleteById(Long instId) {
+        boolean ifExists = ifInstrumentExists(instId);
+        if (!ifExists) {
+            throw new IllegalArgumentException("Instrument does not exist!");
+        }
+        else {
+            instrumentRepo.deleteById(instId);
+        }
+        return ("Instrument: " + instId + " has been deleted!");
+    }
 }
