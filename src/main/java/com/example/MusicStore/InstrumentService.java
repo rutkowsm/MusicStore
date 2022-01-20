@@ -50,18 +50,6 @@ public class InstrumentService {
         return null;
     }
 
-//    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
-
-//    public List<Long> getAllByType(String instType) {
-//        List<Instrument> instruments = instrumentRepo.findAll();
-//        List<Long> instByType = new ArrayList<>();
-//        for (Instrument x : instruments){
-//            if (x.getInstType().equalsIgnoreCase(instType)) {
-//                instByType.add(x.getInstId());
-//            }
-//        }
-//        return instByType;
-//    }
 
     public List<Instrument> getAllInstruments() {
         return instrumentRepo.findAll();
@@ -100,4 +88,17 @@ public class InstrumentService {
         }
         return ("Instrument: " + instId + " has been deleted!");
     }
+
+    //    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
+
+//    public List<Instrument> getAllByType(String instType) {
+//        List<Instrument> instruments = getAllInstruments();
+//        List<Instrument> instByType = new ArrayList<>();
+//        for (Instrument x : instruments){
+//            if (x.getInstType().equalsIgnoreCase(instType)) {
+//                instByType.add(x);
+//            }
+//        }
+//        return instByType;
+//    }
 }

@@ -63,7 +63,7 @@ public class InstrumentRestController {
 
     //    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
 
-//    @GetMapping("/all/{instType}")
+//    @GetMapping("/all/bytype/{instType}")
 //    public ResponseEntity<List<Long>> getAllByType(@PathVariable String instType) {
 //        return (ResponseEntity<List<Long>>) instrumentService.getAllByType(instType);
 //    }
