@@ -26,13 +26,6 @@ public class Instrument {
         this.price = price;
     }
 
-    public Instrument(String instType, String subType, String brand, String model) {
-        this.instType = instType;
-        this.subType = subType;
-        this.brand = brand;
-        this.model = model;
-    }
-
     public Instrument (int price){
         this.price = price;
     }
@@ -77,11 +70,12 @@ public class Instrument {
         this.model = model;
     }
 
-    public int getPrice(int newPrice) {
+    public int getPrice() {
         return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
+
 }
