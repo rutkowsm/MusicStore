@@ -29,4 +29,23 @@ public class InstrumentRestControllerTest {
 
     }
 
+//    @Test
+//    void isCreateOk() throws Exception {
+//        mockMvc.perform(get("/main/create"))
+//                .andDo(print())
+//                .andExpect(status().isOk())
+//                .andExpect(content().string("{\"instId\":1,\"instType\":\"Guitar\"," +
+//                        "\"subType\":\"Acoustic\":\"brand\":\"Guild\",\"model\":\"ACJE350\",\"price\":4999}"));
+//    }
+
+
+//    @Test
+//    void shouldFindInst10() throws Exception{
+//        mockMvc.perform(get("/main/find/10"))
+//                .andDo(print())
+//                .andExpect(status().isOk())
+//                .andExpect(content().string("\"instId\":10,\"instType\":\"guitar\",\"subType\":\"acoustic\"," +
+//                        "\"brand\":\"Garrison\",\"model\":\"JFGS048\",\"price\":2359"));
+//    }
+
 }
