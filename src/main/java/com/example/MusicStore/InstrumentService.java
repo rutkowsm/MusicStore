@@ -38,17 +38,7 @@ public class InstrumentService {
 //        }
 //    }
 
-    public void doublePriceGuitar(Instrument instrument) {
-        int price = instrument.getPrice();
-        String instType = instrument.getInstType();
-        if(instType.equalsIgnoreCase("guitar")){
-            instrument.setPrice(price * 2);
-        }
-        else {
-            System.out.println("The instrument is not a guitar");
-        }
 
-    }
 
 //    public Instrument updatePrice(Long instId, int newPrice) {
 //        Optional<Instrument> byId = instrumentRepo.findById(instId);
@@ -113,4 +103,41 @@ public class InstrumentService {
 //        }
 //        return instByType;
 //    }
+
+    public static void doublePriceGuitar(Instrument instrument) {
+        int price = instrument.getPrice();
+        String instType = instrument.getInstType();
+        if(instType.equalsIgnoreCase("guitar")){
+            instrument.setPrice(price * 2);
+        }
+        else {
+            System.out.println("The instrument is not a guitar");
+        }
+
+    }
+
+    public static void updateType(Instrument instrument){
+        String instType = instrument.getInstType();
+        if(instType.equalsIgnoreCase("null") || instType.equalsIgnoreCase("test") || instType.isEmpty() || instType.isBlank()){
+            instType = "Unknown";
+            instrument.setInstType(instType);
+        }
+
+        else {
+            instrument.getInstType();
+        }
+    }
+
+    public static void updateNullType(Instrument instrument) {
+        String instType = instrument.getInstType();
+        if (instType == null) {
+            instType = "Unknown";
+            instrument.setInstType(instType);
+        }
+        else {
+            instrument.getInstType();
+        }
+    }
+
+
 }
