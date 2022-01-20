@@ -56,10 +56,10 @@ public class InstrumentRestController {
 //        changePrice(instId, newPrice);
 //    }
 
-    @GetMapping("/updateprice/{instId}/{newPrice}")
-    public ResponseEntity<Instrument> updatePrice(@PathVariable Long instId, @PathVariable int newPrice) {
-        return ResponseEntity.ok(instrumentService.updatePrice(instId, newPrice));
-    }
+//    @GetMapping("/updateprice/{instId}/{newPrice}")
+//    public ResponseEntity<Instrument> updatePrice(@PathVariable Long instId, @PathVariable int newPrice) {
+//        return ResponseEntity.ok(instrumentService.updatePrice(instId, newPrice));
+//    }
 
     //    NIE DZIALA - ZWRACA PUSTA LISTE!!!!
 
@@ -86,4 +86,6 @@ public class InstrumentRestController {
     public String findByIdNew(@PathVariable Long instId) {
         return instrumentService.findByIdNew(instId);
     }
+
+
 }

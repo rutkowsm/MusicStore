@@ -38,17 +38,29 @@ public class InstrumentService {
 //        }
 //    }
 
-    public Instrument updatePrice(Long instId, int newPrice) {
-        Optional<Instrument> byId = instrumentRepo.findById(instId);
-        if(byId.isPresent()){
-            byId.get().setPrice(newPrice);
-
+    public void doublePriceGuitar(Instrument instrument) {
+        int price = instrument.getPrice();
+        String instType = instrument.getInstType();
+        if(instType.equalsIgnoreCase("guitar")){
+            instrument.setPrice(price * 2);
         }
         else {
-            throw new IllegalArgumentException("Instrument does not exist!");
+            System.out.println("The instrument is not a guitar");
         }
-        return null;
+
     }
+
+//    public Instrument updatePrice(Long instId, int newPrice) {
+//        Optional<Instrument> byId = instrumentRepo.findById(instId);
+//        if(byId.isPresent()){
+//            byId.get().setPrice(newPrice);
+//
+//        }
+//        else {
+//            throw new IllegalArgumentException("Instrument does not exist!");
+//        }
+//        return null;
+//    }
 
 
     public List<Instrument> getAllInstruments() {
