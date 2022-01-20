@@ -80,10 +80,20 @@ public class InstrumentService {
         return brands;
     }
 
-        public String deleteById(Long instId) {
+    public String findByIdNew (Long instId) {
         boolean ifExists = ifInstrumentExists(instId);
         if (!ifExists) {
-            throw new IllegalArgumentException("Instrument does not exist!");
+            return ("Instrument ID: " + instId + " does not exist!");
+        }
+        else {
+            return ("Instrument ID: " + instId + " is: " + findById(instId).getBrand() + " " + findById(instId).getModel() + "; Price: " + findById(instId).getPrice() + " PLN.");
+        }
+    }
+
+    public String deleteById(Long instId) {
+        boolean ifExists = ifInstrumentExists(instId);
+        if (!ifExists) {
+            return ("Instrument ID: " + instId + " does not exist!");
         }
         else {
             instrumentRepo.deleteById(instId);

@@ -81,4 +81,9 @@ public class InstrumentRestController {
     public String deleteById(@PathVariable Long instId) {
         return instrumentService.deleteById(instId);
     }
+
+    @GetMapping("/find/byid/{instId}")
+    public String findByIdNew(@PathVariable Long instId) {
+        return instrumentService.findByIdNew(instId);
+    }
 }
