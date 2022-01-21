@@ -32,7 +32,8 @@ public class InstrumentRestController {
 
     @GetMapping("/create")
     public ResponseEntity<Instrument> getInstrument(){
-        return ResponseEntity.ok(instrumentService.createInstrument("Guitar", "Acoustic", "Guild", "ACJE350", 4999));
+        return ResponseEntity.ok(instrumentService.createInstrument("Guitar", "Acoustic", "Guild", "ACE99",
+                4999));
     }
 
     @GetMapping("/create/{instType}/{subType}/{brand}/{model}/{price}")

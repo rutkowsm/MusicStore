@@ -34,6 +34,15 @@ public class Instrument {
         return instId;
     }
 
+    public Instrument(Long instId, String instType, String subType, String brand, String model, int price) {
+        this.instId = instId;
+        this.instType = instType;
+        this.subType = subType;
+        this.brand = brand;
+        this.model = model;
+        this.price = price;
+    }
+
     public void setInstId(Long instId) {
         this.instId = instId;
     }
