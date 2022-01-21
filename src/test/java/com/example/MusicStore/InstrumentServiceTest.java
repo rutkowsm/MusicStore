@@ -58,14 +58,16 @@ public class InstrumentServiceTest {
 
     @Test
     void shouldChangeType2(){
+
         Instrument instrument4 = new Instrument("", "test", "test", "test", 1);
         InstrumentService.updateType(instrument4);
         assertThat(instrument4.getInstType()).isEqualTo("Unknown");
+
     }
 
     @Test
     void shouldChangeNullType() {
-        Instrument instrument = new Instrument("", "test", "test", "test", 1);
+        Instrument instrument = new Instrument(null, "test", "test", "test", 1);
         InstrumentService.updateNullType(instrument);
         assertThat(instrument.getInstType()).isEqualTo("Unknown");
     }
